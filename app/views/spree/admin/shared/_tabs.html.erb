@@ -4,9 +4,6 @@
 <% if can? :admin, Spree::Product %>
   <%= tab :products, :option_types, :properties, :prototypes, :variants, :product_properties, :icon => 'icon-th-large' %>
 <% end %>
-<% if can? :admin, Farmy::Supplier %>
-    <%= tab(:suppliers, :url => spree.admin_farmy_suppliers_path, :match_path => '/farmy/suppliers', :icon => 'icon-bullhorn') %>
-<% end %>
 <% if can? :admin, Spree::Admin::ReportsController %>
   <%= tab :reports, :icon => 'icon-file'  %>
 <% end %>
