@@ -1,0 +1,41 @@
+<%= render :partial => 'spree/admin/shared/configuration_menu' %>
+<% content_for :page_title do %>
+  <%= Spree.t(:edit_payone_settings) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <li>
+    <%= button_link_to Spree.t(:back_to_payone_settings), admin_payone_settings_path, :icon => 'icon-arrow-left' %>
+  </li>
+<% end %>
+
+<%= form_tag admin_payone_settings_path, :method => :put do %>
+  <div class="alpha twelve columns">
+    <fieldset class="no-border-bottom" id="logging-preferences" data-hook>
+      <legend align="center"> <%= t(:logging_preferences) %> </legend>
+      <% @logging_preferences.each do |key, options|
+        type = Spree::Config.preference_type(key) %>
+        <%= label_tag(key, t(key) + ': ') %>
+        <%= payone_settings_preference_field_tag(key, Spree::Config[key], options.merge!(:type => type)) %>
+        <br>
+      <% end %>
+    </fieldset>
+
+    <fieldset class="no-border-bottom" id="logging-preferences" data-hook>
+      <legend align="center"> <%= t(:redirect_url_preferences) %></legend>
+      <% @redirect_url_preferences.each do |key, options|
+        type = Spree::Config.preference_type(key) %>
+        <%= label_tag(key, t(key) + ': ') + tag(:br) %>
+        <%= payone_settings_preference_field_tag(key, Spree::Config[key], options.merge!(:type => type)) %>
+      <% end %>
+    </fieldset>
+
+    <fieldset class="no-border-top" id="logging-preferences" data-hook>
+      <div class="form-buttons filter-actions actions" data-hook="buttons">
+        <%= button Spree.t('actions.update'), 'icon-refresh' %>
+        <span class="or"><%= Spree.t(:or) %></span>
+        <%= button_link_to Spree.t('actions.cancel'), admin_payone_settings_url, :icon => 'icon-remove' %>
+      </div>
+    </fieldset>
+  </div>
+<% end %>

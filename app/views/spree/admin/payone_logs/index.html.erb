@@ -1,0 +1,70 @@
+<%= render :partial => 'spree/admin/shared/configuration_menu' %>
+
+<% content_for :page_title do %>
+  <%= t(:listing_payone_logs) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <li>
+    <%= button_link_to t(:clear_payone_logs), clear_admin_payone_logs_url, :icon => 'icon-trash', :id => 'admin_clear_payone_logs_link' %>
+  </li>
+<% end %>
+
+<div class="alpha twelve columns">
+  <%= search_form_for [:admin, @search] do |f| %>
+    <fieldset class="no-border-bottom" id="logging-preferences" data-hook>
+      <legend align="center"> <%= Spree.t(:search) %> </legend>
+      <div data-hook="admin_payone_logs_index_search">
+        <div class="alpha twelve columns">
+            <%= t(:payone_log_message) %>:
+            <%= f.text_field :message_cont, :size =>'75%' %>
+        </div>
+        <div class="clear"></div>
+        <fieldset class="no-border-top">
+          <div class="form-buttons actions filter-actions " data-hook="admin_payone_logs_index_search_buttons">
+            <%= button Spree.t(:search), 'icon-search' %>
+          </div>
+        </fieldset>
+      </div>
+    </fieldset>
+  <% end %>
+</div>
+
+<%= paginate @payone_logs %>
+
+<% if !Spree::Config[:payone_db_logging_enabled] %>
+  <div class="alpha twelve columns no-objects-found">
+    <%= t(:payone_db_logging_disabled) %>
+  </div>
+<% end %>
+
+<table class="index" id="listing_payone_logs" data-hook>
+  <colgroup>
+    <col style="width: 10%">
+    <col style="width: 50%">
+    <col style="width: 30%">
+    <col style="width: 10%">
+  </colgroup>
+  <thead>
+    <tr data-hook="admin_payone_logs_index_headers">
+      <th><%= sort_link @search, :level, t(:payone_log_level), {:default_order => "desc"}, {:title => t(:payone_log_level_title)} %></th>
+      <th><%= sort_link @search, :message, t(:payone_log_message), {:default_order => "desc"}, {:title => t(:payone_log_message_title)} %></th>
+      <th><%= sort_link @search, :created_at, t(:payone_log_created_at), {:default_order => "desc"}, {:title => t(:payone_log_created_at_title)} %></th>
+      <th data-hook="admin_payone_logs_index_header_actions" class="actions"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @payone_logs.each do |payone_log|%>
+      <tr id="<%= spree_dom_id payone_log %>" data-hook="admin_payone_logs_index_rows" class="<%= cycle('odd', 'even')%>">
+        <td class='payone_log_level'><%=link_to payone_log.level, object_url(payone_log) %></td>
+        <td class='payone_log_message'><%= simple_format(payone_log.message) %></td>
+        <td class='payone_log_created_at'><%= payone_log.created_at %></td>
+        <td data-hook="admin_payone_logs_index_row_actions" class="actions">
+          <%= link_to_delete payone_log, :no_text => true %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @payone_logs %>

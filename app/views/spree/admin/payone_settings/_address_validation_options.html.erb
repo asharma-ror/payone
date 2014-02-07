@@ -1,0 +1,20 @@
+  <div id="<%= address_validation_address_check %>">
+    <%  key = address_check_address_check_type
+        type = Spree::Config.preference_type(key)
+        options = address_validation_preferences[key] %>
+    <%= label_tag(key, t(key) + ': ') + tag(:br) %>
+    <%= payone_settings_preference_field_tag(key, Spree::Config[key], options.merge!(:type => type)) %>
+  </div>
+  <div id="<%= address_validation_consumer_score %>">
+    <%  key = consumer_score_address_check_type
+        type = Spree::Config.preference_type(key)
+        options = address_validation_preferences[key] %>
+    <%= label_tag(key, t(key) + ': ') + tag(:br) %>
+    <%= payone_settings_preference_field_tag(key, Spree::Config[key], options.merge!(:type => type)) %>
+    
+    <%  key = consumer_score_consumer_score_type
+        type = Spree::Config.preference_type(key)
+        options = address_validation_preferences[key] %>
+    <%= label_tag(key, t(key) + ': ') + tag(:br) %>
+    <%= payone_settings_preference_field_tag(key, Spree::Config[key], options.merge!(:type => type)) %>
+  </div>

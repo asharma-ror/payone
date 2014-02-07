@@ -1,0 +1,89 @@
+<%= render :partial => 'spree/admin/shared/configuration_menu' %>
+
+<% content_for :page_title do %>
+  <%= "Dokumentation für die PAYONE Schnittstelle" %>
+<% end %>
+
+<fieldset class="no-border-bottom" >
+  <legend align="center"> PAYONE Settings</legend>
+  <p>
+    Unter dem Punkt "PAYONE Settings" müssen Sie die Daten Ihres PAYONE-Accounts hinterlegen Die Angaben zu "PAYONE Merchant-ID", "PAYONE Portal-ID", "PAYONE Key" und "PAYONE Sub-Account ID" finden Sie in Ihrem PAYONE-Account unter <a href="https://pmi.pay1.de/">https://pmi.pay1.de/</a>.<br>
+    <br>
+    Rufen sie dort das Menü: <i>Konfiguration &gt; Zahlungsportale</i> auf. Wählen sie mit [edit] ihr Zahlungsportal aus. Im Reiter API-Parameter finden sie alle notwendigen Parameter aufgelistet.<br>
+    Stellen sie im Reiter <i>Erweitert</i> die Transaktionsstatusurl ein(<i>http.//ihr-shop.de</i>).<br>
+    <br>
+    Ist bei den einzelnen Bezahlmethoden die checkbox "Globale Einstellungen benuten" aktiviert werden die hier gesetzten werte übernommen.<br/>
+    <br>
+    Sollten Sie für eine bestimmte Bezahlmethode einen anderen Account haben, können Sie die Checkbox deaktivieren und die Angaben dort hinterlegen.<br>
+    <br>
+    Wenn Sie den Testmodus aktivieren, werden nur die Testdaten von PAYONE angenommen. Diese Einstellung ist lediglich zum Überprüfen der Einstellungen und des Gesamtprozesses gedacht.<br>
+    <br>
+  </p>
+</fieldset>
+
+<fieldset class="no-border-bottom" >
+  <legend align="center">PAYONE Bezahlmethoden</legend>
+  <p>
+    Um über die Schnittstelle zu PAYONE Verkäufe abwickeln zu können, stehen Ihnen unter "Konfiguration -&gt; Zahlungsmethoden"  (Configuration &gt; Payment Methods) folgende Methoden zur Verfügung:
+  </p><br>
+  <div style="padding:20px;">
+    <ul>
+      <li><a href="#credit">Kreditkarte (Spree::Gateway::PAYONE::CreditCard)</a></li>
+    </ul>
+  </div>
+</fieldset>
+
+<fieldset class="no-border-bottom" >
+  <legend align="center">Kreditkarte (PAYONE:CreditCard)</legend>
+  <a name="credit"></a>
+  <p>
+    Mit dieser Methode können verschiedene Kreditkartenarten angeboten werden. Um mehrere Arten gleichzeitig anzubieten, legen Sie die Methode bitte mehrfach mit unterschiedlichen Einstellungen an.
+    In dem Feld "Credit Card Type" können Sie bestimmen, welcher Kartentyp aktzeptiert werden soll.<br>
+    <br>
+    Visa Card: V<br>
+    MasterCard: M<br>
+    Amex: A<br>
+    American Diners: D<br>
+    JCB: J<br>
+    Maestro Int.: O<br>
+    Discover: C<br>
+    Carte Bleue: B<br>
+    <br>
+    Für MasterCard, Visa und JCB sind 3D-Secure-Karten automatisch mit abgedeckt.<br>
+    <br>
+  </p>
+</fieldset>
+
+<fieldset class="no-border-bottom" >
+  <legend align="center">PAYONE Addressvalidierung</legend>
+  <p>
+    Um die Adressvalidierung von Payone zu verwenden, setzen Sie bitte die Einstellungen unter dem Menüpunkt "PAYONE Settings"<br>
+    <br>
+    Es wird ein Wert des Ampelsystems zurückgegeben - Grün, Gelb, Rot - wobei Grün eine hohe und Rot eine niedrige Bonität darstellt.<br>
+    <br>
+    Die Einstellung Person-Check ist nur für Deutschland verfügbar.<br>
+    Es können sowohl die Rechnungsadresse, wie die Lieferadresse geprüft werden.
+    Werden beide Adressen geprüft, greifen die Einstellungen für die niedrigere Bonität.<br>
+    <br>
+    Als Einstellungsmöglichkeiten stehen Ihnen die Parameter Mindestbetrag und Maximalbetrag zur verfügung. Der Mindestbetrag gibt an, ab welchem Warenwert die Restriktionen greifen sollen. Der maximal-Wert gibt an, bis zu welchem Einkaufswert eine Bestellung zugelassen werden soll.<br>
+    <br>
+    Des weiteren können Sie einstellen, welche Bezahlmethoden für die entsprechende Gruppe zur verfügung stehen soll.<br>
+    <br>
+  </p>
+</fieldset>
+
+<fieldset class="no-border-bottom" >
+  <legend align="center">Überzahlungen zurück überweisen</legend>
+  <p>
+    Bei den Bezahlmethoden Lastschrift, Sofort-Überweisung, giropay, Rechnung, Vorkasse, Nachnahme und PayPal kann das Geld über die PAYONE-Schnittstelle zurückgebucht werden, wenn der Status der Bezahlung auf "Betrag schuldig" (credit owed) steht. der Button "zurück überweisen" (credit) bucht den überzahlten Betrag über die zugehörige Bezahlmethode auf das Konto des kunden zurück.<br>
+    <br>
+  </p>
+</fieldset>
+
+<fieldset class="no-border-bottom" >
+  <legend align="center">PAYONE Logs</legend>
+  <p>
+    Unter dem Menüpunkt "PAYONE Logs" finden Sie alle aktivitäten von und zu PAYONE. Sollten Fehler bei der Kommunikation mit der Schnittstelle auftreten, schauen Sie bitte hier nach.<br>
+    <br>
+  </p>
+</fieldset>

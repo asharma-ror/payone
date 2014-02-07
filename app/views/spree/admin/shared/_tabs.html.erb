@@ -1,0 +1,16 @@
+<% if can? :admin, Spree::Order %>
+  <%= tab :orders, :payments, :creditcard_payments, :shipments, :credit_cards, :return_authorizations, :match_path => '/orders', :icon => 'icon-shopping-cart' %>
+<% end %>
+<% if can? :admin, Spree::Product %>
+  <%= tab :products, :option_types, :properties, :prototypes, :variants, :product_properties, :icon => 'icon-th-large' %>
+<% end %>
+<% if can? :admin, Farmy::Supplier %>
+    <%= tab(:suppliers, :url => spree.admin_farmy_suppliers_path, :match_path => '/farmy/suppliers', :icon => 'icon-bullhorn') %>
+<% end %>
+<% if can? :admin, Spree::Admin::ReportsController %>
+  <%= tab :reports, :icon => 'icon-file'  %>
+<% end %>
+<%= tab :configurations, :general_settings, :mail_methods, :image_settings, :tax_categories, :tax_rates, :tax_settings, :zones, :countries, :states, :payment_methods, :taxonomies, :shipping_methods, :shipping_categories, :stock_transfers, :stock_locations, :trackers, :payone_settings, :payone_logs, :payone_docs, :label => 'config', :icon => 'icon-wrench', :url => spree.edit_admin_general_settings_path %>
+<% if can? :admin, Spree::Promotion %>
+  <%= tab(:promotions, :url => spree.admin_promotions_path, :label => 'promo', :icon => 'icon-bullhorn') %>
+<% end %>

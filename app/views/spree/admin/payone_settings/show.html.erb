@@ -1,0 +1,43 @@
+<%= render :partial => 'spree/admin/shared/configuration_menu' %>
+
+<% content_for :page_title do %>
+  <%= t(:payone_settings) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <li>
+    <%= button_link_to t(:edit_payone_settings), edit_admin_payone_settings_path, icon: 'icon-edit', :id => 'admin_edit_payone_setting_link' %>
+  </li>
+<% end %>
+
+<table class="index" data-hook="preferences">
+  <thead>
+    <tr>
+      <th colspan="2" style="font-size: 150%"><%= t(:redirect_url_preferences) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @redirect_url_preferences.each do |key, options|
+      type = Spree::Config.preference_type(key) %>
+      <tr>
+        <th scope="row"><%= t(key) %>:</th>
+        <td><%= payone_settings_preference_visible_value(Spree::Config[key], options.merge!(:type => type)) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+  <thead>
+    <tr>
+      <th colspan="2" style="font-size: 150%"><%= t(:logging_preferences) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @logging_preferences.each do |key, options|
+      type = Spree::Config.preference_type(key) %>
+      <tr>
+        <th scope="row"><%= t(key) %>:</th>
+        <td><%= payone_settings_preference_visible_value(Spree::Config[key], options.merge!(:type => type)) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

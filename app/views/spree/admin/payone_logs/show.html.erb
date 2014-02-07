@@ -1,0 +1,33 @@
+<%= render :partial => 'spree/admin/shared/configuration_menu' %>
+
+<% content_for :page_title do %>
+  <%= t(:payone_log) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <li>
+    <%= button_link_to t(:back_to_payone_logs), collection_url, :icon => 'icon-arrow-left', :id => 'admin_clear_payone_logs_link' %>
+  </li>
+<% end %>
+
+<table>
+  <tr data-hook="payone_log_level">
+    <th><%= t(:payone_log_level) %></th>
+    <td>
+      <%= @payone_log.level %>
+    </td>
+  </tr>
+  <tr data-hook="payone_log_message">
+    <th><%= t(:payone_log_message) %></th>
+    <td>
+      <%= @payone_log.message %>
+    </td>
+  </tr>
+  <tr data-hook="payone_log_created_at">
+    <th><%= t(:payone_log_created_at) %></th>
+    <td>
+      <%= @payone_log.created_at %>
+    </td>
+  </tr>
+</table>
+
