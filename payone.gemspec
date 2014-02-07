@@ -6,10 +6,10 @@ require 'payone/version'
 Gem::Specification.new do |spec|
   spec.name          = "payone"
   spec.version       = Payone::VERSION
-  spec.authors       = ["TODO: Write your name"]
-  spec.email         = ["TODO: Write your email address"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.authors       = 'ashamra-ror'
+  spec.email         = 'asharma.ror@gmail.com'
+  spec.description   = 'Provide credit card payment facility'
+  spec.summary       = 'Provide credit card payment facility'
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -20,4 +20,9 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
+
+  # Add dependency
+  spec.add_dependency('ruby', '>= 2.0.0')
+  spec.add_dependency('rails', '>= 4.0.0')
+  spec.add_dependency('spree_core',  '>= 2.0.0')
 end
