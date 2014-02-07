@@ -6,13 +6,13 @@ module Spree
   class Gateway::PAYONE::CreditCard < Gateway
 
     # Gateway preferences
-    preference :merchant_id, :string
-    preference :payment_portal_id, :string
-    preference :payment_portal_key, :string
-    preference :sub_account_id, :string
-    preference :currency_code, :string, :default => 'EUR'
-    preference :credit_card_types, :string, :default => 'V'
-    preference :test_mode, :boolean, :default => true
+    #preference :merchant_id, :string
+    #preference :payment_portal_id, :string
+    #preference :payment_portal_key, :string
+    #preference :sub_account_id, :string
+    #preference :currency_code, :string, :default => 'EUR'
+    #preference :credit_card_types, :string, :default => 'V'
+    #preference :test_mode, :boolean, :default => true
 
     # Returns provider class responsible for Spree gateway action implementations.
     def provider_class

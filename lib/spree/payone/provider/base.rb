@@ -5,11 +5,11 @@ module Spree::PAYONE
 
       # Sets initial data.
       def initialize(options)
-        @merchant_id = options[:merchant_id]
-        @payment_portal_id = options[:payment_portal_id]
-        @payment_portal_key = options[:payment_portal_key]
-        @sub_account_id = options[:sub_account_id]
-        @test_mode = options[:test_mode]
+        @merchant_id = Payone.merchant_id #'24865'
+        @payment_portal_id = Payone.payment_portal_id #'2017690'
+        @payment_portal_key = Payone.payment_portal_key #'EU50wZYn8a2d6K94'
+        @sub_account_id = Payone.sub_account_id #'24883'
+        @test_mode = Payone.test_mode #true
         @language = I18n.locale.to_s.downcase
       end
 

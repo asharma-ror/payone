@@ -4,6 +4,9 @@ require 'spree_core'
 
 # Require spree lib files
 require 'logger'
+require 'net/https'
+require 'open-uri'
+
 require 'spree/payone/logger'
 require 'spree/payone/request_history'
 require 'spree/payone/utils/credit_card_type'
@@ -19,5 +22,11 @@ require 'spree/payone/proxy/request'
 
 
 module Payone
-  # Your code goes here...
+  mattr_accessor :merchant_id, :payment_portal_id, :payment_portal_key, :sub_account_id, :test_mode, :currency_code, :credit_card_types
+
+  # Default way to setup Payone. Run rails generate devise_install to create
+  # a fresh initializer with all configuration values.
+  def self.setup
+    yield self
+  end
 end

@@ -7,7 +7,7 @@ module Spree::PAYONE
         # Sets initial data.
         def initialize(options)
           super(options)
-          @currency_code = options[:currency_code]
+          @currency_code = Payone.currency_code  #'EUR'
         end
 
         # Sets amount parameters.
