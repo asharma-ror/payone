@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake"
 
   # Add dependency
-  spec.add_dependency('ruby', '>= 2.0.0')
+  #spec.add_dependency('ruby', '>= 2.0.0')
   spec.add_dependency('rails', '>= 4.0.0')
   spec.add_dependency('spree_core',  '>= 2.0.0')
 end
