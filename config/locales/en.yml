@@ -1,0 +1,104 @@
+en:
+  # Translations for /admin/payone_settings pages
+  payone_settings: "PAYONE Settings"
+  edit_payone_settings: "Edit PAYONE Settings"
+  payone_settings_description: "Configure PAYONE settings."
+
+  connection_preferences: "Connection Preferences (Global Settings)"
+  redirect_url_preferences: "Redirect Url Preferences"
+  logging_preferences: "Logging Preferences"
+
+  # Translations for /admin/payone_logs pages
+  payone_logs: "PAYONE Logs"
+  payone_logs_description: "Browse PAYONE logs stored in DB."
+  payone_log: "PAYONE Log"
+  listing_payone_logs: "Listing PAYONE Logs"
+  payone_log_level: "Level"
+  payone_log_message: "Message"
+  payone_log_created_at: "Created At"
+  payone_log_level_title: "Level"
+  payone_log_message_title: "Message"
+  payone_log_created_at_title: "Created At"
+  clear_payone_logs: "Clear All"
+  payone_log_is_not_found: "PAYONE Log is not found"
+
+  # Translations for /admin/payone_docs pages
+  payone_docs: "PAYONE Documentation"
+  payone_docs_description: "PAYONE configuration documentation for Spree engine."
+
+  # Translation for preferences (analogue to preference names)
+  payone_merchant_id: "PAYONE Merchant-ID"
+  payone_payment_portal_id: "PAYONE Portal-ID"
+  payone_payment_portal_key: "PAYONE Key"
+  payone_sub_account_id: "PAYONE Sub-Account ID"
+  payone_test_mode: "PAYONE Test Mode"
+
+  payone_engine_host: "PAYONE Engine Host"
+
+  payone_db_logging_enabled: "PAYONE DB Logging Enabled"
+  payone_db_logging_disabled: "PAYONE DB Logging Disabled"
+  payone_file_logging_enabled: "PAYONE File Logging Enabled"
+
+  # Translations for gateway/payment method source names
+  cash_on_delivery: "Cash On Delivery"
+  credit_card: "Credit Card"
+  debit_payment: "Debit Payment"
+  e_wallet: "E-wallet"
+  invoice: "Invoice"
+  online_bank_transfer: "Online Bank Transfer"
+  cash_in_advance: "Cash In Advance"
+
+  # Translations for gateway/payment method source field names
+  shipping_provider: "Shipping Provider"
+  card_number: "Card Number"
+  expiration: "Expiration"
+  card_code: "Card Code"
+  card_type: "Card Type"
+  card_holder: "Card Holder"
+  bank_country: "Bank Country"
+  bank_account: "Bank Accout"
+  bank_code: "Bank Code"
+  bank_account_holder: "Bank Account Holder"
+  wallet_type: "Wallet Type"
+  online_bank_transfer_type: "Online Bank Transfer Type"
+  bank_group_type: "Bank Group Type"
+
+  # Translations for gateway/payment method preferenced (analogue to preference names)
+  use_global_account_settings: "Use Global Account Settings"
+  merchant_id: "Merchant-ID"
+  payment_portal_id: "Portal-ID"
+  payment_portal_key: "Key"
+  sub_account_id: "Sub-Account ID"
+  test_mode: "Test Mode"
+  currency_code: "Currency Code (ISO 4217)"
+
+  credit_card_types: "Credit Card Types"
+  online_bank_transfer_types: "Online Bank Transfer Types"
+
+  # Translations for request/response values
+  credit_card_type_visa: "Visa"
+  credit_card_type_mastercard: "Mastercard"
+  credit_card_type_amex: "American Express"
+  credit_card_type_diners: "Diners"
+  credit_card_type_jbc: "JBC"
+  credit_card_type_maestro_international: "Maestro International"
+  credit_card_type_discover: "Discover"
+  credit_card_type_carte_bleue: "Carte Bleue"
+
+  # Translation for custom messages
+  payone_credit_card_check_failed: "PAYONE credit card check failed"
+  payment_processing_canceled: "Payment could not be processed because it has been canceled"
+  payment_method_not_available_for_country: "Selected payment method is not available for your country (%{country_code})"
+  details: "Details"
+
+  # Translations for errors
+  errors:
+    messages:
+      person_status_none: "No verification of personal data carried out"
+      person_status_ppb: "First name and surname known"
+      person_status_phb: "Surname known"
+      person_status_pab: "First name and surname unknown"
+      person_status_pki: "Ambiguity in name and address"
+      person_status_pnz: "Cannot be delivered (any longer)"
+      person_status_ppv: "Person deceased"
+      person_status_ppf: "Postal address details incorrect"

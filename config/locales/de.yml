@@ -1,0 +1,104 @@
+de:
+  # Translations for /admin/payone_settings pages
+  payone_settings: "PAYONE Einstellungen (Globale Einstellungen)"
+  edit_payone_settings: "PAYONE Einstellungen bearbeiten"
+  payone_settings_description: "Einstellungen zum PAYONE Konto."
+
+  connection_preferences: "Account-Einstellungen"
+  redirect_url_preferences: "Redirect Url"
+  logging_preferences: "Log Einstellungen"
+
+  # Translations for /admin/payone_logs pages
+  payone_logs: "PAYONE Logs"
+  payone_logs_description: "Protokoll der PAYONE Kommunikation."
+  payone_log: "PAYONE Log"
+  listing_payone_logs: "Liste aller PAYONE Logs"
+  payone_log_level: "Level"
+  payone_log_message: "Beschreibung"
+  payone_log_created_at: "Erstellt am"
+  payone_log_level_title: "Level"
+  payone_log_message_title: "Beschreibung"
+  payone_log_created_at_title: "Erstellt am"
+  clear_payone_logs: "Alle löschen"
+  payone_log_is_not_found: "PAYONE Log wurde nicht gefunden"
+
+  # Translations for /admin/payone_docs pages
+  payone_docs: "PAYONE Dokumentation"
+  payone_docs_description: "Dokumentation für die Schnittstelle zwischen Spree und PAYONE."
+
+  # Translation for preferences (analogue to preference names)
+  payone_merchant_id: "PAYONE Merchant-ID"
+  payone_payment_portal_id: "PAYONE Portal-ID"
+  payone_payment_portal_key: "PAYONE Key"
+  payone_sub_account_id: "PAYONE Sub-Account ID"
+  payone_test_mode: "PAYONE Test Modus"
+
+  payone_engine_host: "Shop URL"
+
+  payone_db_logging_enabled: "PAYONE DB Logging ist aktiviert"
+  payone_db_logging_disabled: "PAYONE DB Logging ist deaktiviert"
+  payone_file_logging_enabled: "PAYONE Datei Logging ist aktiviert"
+
+  # Translations for gateway/payment method source names
+  cash_on_delivery: "Per Nachname"
+  credit_card: "Kreditkarte"
+  debit_payment: "Kontobasierte zahlungsarten"
+  e_wallet: "E-wallet"
+  invoice: "Rechnung"
+  online_bank_transfer: "Onlineüberweisung"
+  cash_in_advance: "Vorkasse"
+
+  # Translations for gateway/payment method source field names
+  shipping_provider: "Lieferant"
+  card_number: "Kartennumber"
+  expiration: "Verfallsdatum"
+  card_code: "Sicherheitscode"
+  card_type: "Kartentyp"
+  card_holder: "Karteninhaber"
+  bank_country: "Land"
+  bank_account: "Kontonummer"
+  bank_code: "Postleitzahl"
+  bank_account_holder: "Kontoinhaber"
+  wallet_type: "Wallet Type"
+  online_bank_transfer_type: "Onlineüberweisungsart"
+  bank_group_type: "Bank Group Type"
+
+  # Translations for gateway/payment method preferenced (analogue to preference names)
+  use_global_account_settings: "Globale Einstellungen benuten"
+  merchant_id: "Merchant-ID"
+  payment_portal_id: "Portal-ID"
+  payment_portal_key: "Key"
+  sub_account_id: "Sub-Account ID"
+  test_mode: "Test Modus"
+  currency_code: "Währungscode (ISO 4217)"
+
+  credit_card_types: "Kreditkartentypen"
+  online_bank_transfer_types: "Onlineüberweisungsarten"
+
+  # Translations for request/response values
+  credit_card_type_visa: "Visa"
+  credit_card_type_mastercard: "Mastercard"
+  credit_card_type_amex: "American Express"
+  credit_card_type_diners: "Diners"
+  credit_card_type_jbc: "JBC"
+  credit_card_type_maestro_international: "Maestro International"
+  credit_card_type_discover: "Discover"
+  credit_card_type_carte_bleue: "Carte Bleue"
+
+  # Translation for custom messages
+  payone_credit_card_check_failed: "PAYONE Kreditkartenprüfung fehlgeschlagen"
+  payment_processing_canceled: "Bezahlung konnte nicht abgeschlossen werden da der Vorgang abgebrochen wurde"
+  payment_method_not_available_for_country: "Die ausgewählte Bezahlmethode ist für dieses Land nicht verfügbar (%{country_code})"
+  details: "Details"
+
+  # Translations for errors
+  errors:
+    messages:
+      person_status_none: "Keine Personenprüfung durchgeführt"
+      person_status_ppb: "Vor- & Nachname bekannt"
+      person_status_phb: "Nachname bekannt"
+      person_status_pab: "Vor- & Nachname nicht bekannt"
+      person_status_pki: "Mehrdeutigkeit bei Name zu Anschrift"
+      person_status_pnz: "Nicht (mehr) zustellbar"
+      person_status_ppv: "Person verstorben"
+      person_status_ppf: "Adresse postalisch falsch"
