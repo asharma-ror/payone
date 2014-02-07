@@ -20,5 +20,11 @@ module Payone
     end
 
     config.to_prepare &method(:activate).to_proc
+
+    initializer "payone.register.payment_methods" do |app|
+      app.config.spree.payment_methods += [
+        Spree::Gateway::PAYONE::CreditCard
+      ]
+    end
   end
 end
